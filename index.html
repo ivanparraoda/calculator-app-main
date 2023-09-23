@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="flex">
+      <form action="#" class="form color-picker">
+        <h1>Calc</h1>
+
+        <fieldset class="toggle">
+          <legend class="">THEME</legend>
+
+          <label for="theme">1</label>
+          <input type="radio" name="theme" id="dark" checked />
+
+          <label for="theme">2</label>
+          <input type="radio" name="theme" id="light" />
+
+          <label for="theme">3</label>
+          <input type="radio" name="theme" id="purple" />
+        </fieldset>
+      </form>
+    </header>
+
+    <div class="container">
+      <input type="text" id="pantalla" readonly />
+      <div class="calculadora">
+        <br />
+        <input type="button" value="7" class="btn" />
+        <input type="button" value="8" class="btn" />
+        <input type="button" value="9" class="btn" />
+        <input type="button" value="DEL" class="delete" />
+        <br />
+        <input type="button" value="4" class="btn" />
+        <input type="button" value="5" class="btn" />
+        <input type="button" value="6" class="btn" />
+        <input type="button" value="+" class="btn" />
+        <br />
+        <input type="button" value="1" class="btn" />
+        <input type="button" value="2" class="btn" />
+        <input type="button" value="3" class="btn" />
+        <input type="button" value="-" class="btn" />
+        <br />
+        <input type="button" value="." class="btn" />
+        <input type="button" value="0" class="btn" />
+        <input type="button" value="/" class="btn" />
+        <input type="button" value="*" class="btn" />
+
+        <br />
+        <div class="block-container">
+          <input type="button" value="RESET" class="clear" />
+          <input type="button" value="=" class="res" />
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

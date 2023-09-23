@@ -1,0 +1,294 @@
+:root{
+  
+  --mainbg: hsl(222, 26%, 31%);
+  --keypadcontainer: hsl(223, 31%, 20%);
+  --screenbg: hsl(224, 36%, 15%);
+  --mainkeys: hsl(225, 21%, 49%);
+  --mainkeysshadow: hsl(224, 28%, 35%);
+  --mainkeyshover: hsl(0, 0%, 100%);
+  --accentcolor: hsl(6, 63%, 50%);
+  --accentcolorshadow: hsl(6, 70%, 34%);
+  --keysbg: hsl(30, 25%, 89%);
+  --keysshadow: hsl(28, 16%, 65%);
+  --accentclshadow: hsla(14, 100%, 49%, 0.76);
+  --keysclr: hsl(228, 14%, 21%);
+  --keysheader: hsl(0, 0%, 93%);
+  --header: hsl(0, 0%, 100%);
+  
+}
+
+
+body, html{
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  background-color: var(--mainbg);
+  color: var(--keysclr);
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 500px;
+
+
+}
+
+h1 {
+  color: var(--keysheader);
+  margin-top: 30px;
+
+  
+
+}
+
+.form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  width: 343px;
+}
+
+
+
+.calculadora {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 17px;
+  column-gap: 8px;
+  width: 314px;
+  margin: 0 auto;
+  background-color: var(--keypadcontainer);
+  padding: 20px;
+  border-radius: 5px;
+  font-weight: 700;
+  padding-left: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+#pantalla {
+  
+  width: 63%;
+  padding: 17px;
+  font-size: 20px;
+  margin-bottom: 23px;
+  border-radius: 5px;
+  text-align: right;
+  outline: none;
+  border:none;
+  font-weight: 700;
+  color: var(--keysclr);
+  background-color: var(--screenbg);
+
+}
+
+
+input[type='button'] {
+  
+  width: 70px;
+  height: 40px;
+  font-size: 16px;
+  color: var(--keysclr);
+  background-color: var(--keysbg);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: var(--keysshadow) 0px 2px 2px 0px;
+}
+
+input[type='button']:hover {
+  background-color: var(--mainkeyshover);
+}
+
+input[type='button']:last-child {
+  margin-right: 0;
+}
+
+
+.block-container{
+  display: flex;
+  gap: 7px;
+}
+.block-container input[type='button']{
+  width: 149px;
+}
+.block-container input[type='button'] , .calculadora input[type='button']:nth-child(5) {
+  color: var(--header);
+  font-size: .8rem;
+}
+
+.block-container input[type='button']:first-child, .calculadora input[type='button']:nth-child(5){
+  background-color: var(--mainkeys);
+  box-shadow: var(--mainkeysshadow) 0px 2px 2px 0px;
+
+}
+
+
+
+.calculadora input[type='button']:nth-child(5):hover{
+  background-color: var(--mainkeysshadow);
+}
+
+.block-container input[type='button']:hover{
+  background-color: var(--mainkeysshadow);
+}
+
+
+.block-container input[type='button']:last-child{
+  background-color: var(--accentcolor);
+  color: var(--keysbg);
+  box-shadow: var(--accentcolorshadow) 0px 2px 2px 0px;
+
+}
+
+.block-container input[type='button']:last-child:hover{
+  background-color: var(--accentclshadow);
+  box-shadow: var(--accentcolorshadow) 0px 2px 2px 0px;
+
+}
+
+.hidden{
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.color-picker> fieldset{
+  border-radius: 10px;
+  display: flex;
+  gap: 6px;
+  width: fit-content;
+  color: var(--keysheader);
+  background-color: var(--keypadcontainer);
+  align-items: flex-end;
+  border: none;
+
+}
+
+legend{
+  height: 15px;
+}
+
+
+.color-picker input[type='radio']{
+appearance: none;
+width: 1rem;
+height: 1rem;
+outline: 2px solid var(--keypadcontainer, currentColor );
+border-radius: 50px ;
+outline-offset: 2px;
+
+}
+
+.color-picker input[type='radio']#dark{
+  --keypadcontainer:var(--accentcolor);
+
+}
+
+.color-picker input[type='radio']#light{
+  --keypadcontainer:var(--accentcolor);
+
+}
+
+.color-picker input[type='radio']#purple{
+  --keypadcontainer:var(--accentcolor);
+
+}
+
+.color-picker input[type='radio']:checked{
+  
+  background-color: var(--keypadcontainer );
+  
+  }
+
+
+:root:has(#light:checked){
+  --mainbg: hsl(0, 0%, 90%);
+  --keypadcontainer: hsl(0, 5%, 81%);
+  --screenbg: hsl(0, 0%, 93%);
+  --mainkeys: hsl(185, 44%, 51%);
+  --mainkeysshadow: hsl(185, 35%, 44%);
+  --mainkeyshover:hsl(0, 0%, 100%);
+  --accentcolor: hsl(25, 94%, 45%);
+  --accentcolorshadow: hsl(25, 99%, 27%);
+  --keysbg: hsl(45, 7%, 89%);
+  --accentclshadow: hsl(22, 96%, 53%);
+  --keysclr: hsl(60, 10%, 19%);
+  --keysheader:hsl(60, 10%, 19%);
+  --header: hsl(0, 5%, 18%);
+}
+  
+
+  
+
+:root:has(#purple:checked){
+  --mainbg:hsl(268, 75%, 9%);
+  --keypadcontainer: hsl(268, 71%, 12%);
+  --screenbg: hsl(268, 71%, 12%);
+  --mainkeys:hsl(290, 70%, 36%);
+  --mainkeysshadow:hsl(285, 91%, 52%);
+  --mainkeyshover: hsl(276, 76%, 42%);
+  --accentcolor:  hsl(176, 100%, 44%);
+  --accentcolorshadow: hsl(253, 100%, 50%);
+  --keysbg:hsl(268, 47%, 21%);
+  --keysshadow:hsl(285, 91%, 52%);
+  --accentclshadow: hsl(176, 89%, 73%);
+  --keysclr: hsl(52, 100%, 62%);
+  --keysheader: hsl(52, 100%, 62%);
+
+  }
+
+
+  @media (max-width:480px){
+    .form{
+      justify-content: space-evenly;
+    }
+
+    .container{
+      width: 300px;
+    }
+
+    .calculadora{
+      width: 223px;
+      height: 270px;
+    }
+
+    input[type='button'] {
+      width: 47px;
+
+    }
+    
+    #pantalla{
+      margin-bottom: 15px;
+      margin-top:20px ;
+      width: 75%;
+    }
+
+    .block-container{
+      width: 213px;
+      gap: 10px;
+    }
+    
+  }
